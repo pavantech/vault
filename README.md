@@ -35,3 +35,4 @@ docker run -d --name consul  -p 8500:8500 consul:v0.6.4  agent -dev -client=0.0.
  17. vault read -address=${VAULT_ADDR}  -field=value secret/api-key
  18. curl -H "X-Vault-Token:$VAULT_TOKEN" -XGET http://docker:8200/v1/secret/api-key
  19. curl -s -H  "X-Vault-Token:$VAULT_TOKEN"   -XGET http://docker:8200/v1/secret/api-key  | jq -r .data.value
+ vault list secret
